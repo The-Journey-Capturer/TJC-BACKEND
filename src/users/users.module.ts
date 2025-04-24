@@ -9,8 +9,8 @@ import { AuthModule } from '../auth/auth.module'; // ✅ import AuthModule
 @Module({
   imports: [
     MongooseModule.forFeature([{ name: User.name, schema: UserSchema }]),
-    JwtModule.register({}), // optional
-    AuthModule, // ✅ important
+    JwtModule.register({}),
+    AuthModule,
   ],
   controllers: [UsersController],
   providers: [UsersService],

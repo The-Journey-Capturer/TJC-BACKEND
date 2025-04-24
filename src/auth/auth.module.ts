@@ -5,7 +5,7 @@ import { UsersModule } from '../users/users.module';
 
 @Module({
   imports: [
-    forwardRef(() => UsersModule), // ✅ Yeh zaroori hai circular dependency ke case me
+    forwardRef(() => UsersModule),
     JwtModule.register({
       secret: 'secretKey',
       signOptions: { expiresIn: '1d' },

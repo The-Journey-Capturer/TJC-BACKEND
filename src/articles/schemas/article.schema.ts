@@ -1,7 +1,7 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { Document } from 'mongoose';
-import * as mongoose from 'mongoose';  // Import mongoose
-import { User } from '../../users/schemas/user.schema'; // Adjust path as necessary
+import * as mongoose from 'mongoose';
+import { User } from '../../users/schemas/user.schema';
 
 export type ArticleDocument = Article & Document;
 
@@ -28,8 +28,8 @@ export class Article {
   @Prop([String])
   tags: string[];
 
-  // Explicitly define the type for `featuredImage`
-  @Prop({ type: Object })  // You can also use mongoose.Schema.Types.Mixed if you need flexibility
+  
+  @Prop({ type: Object })
   featuredImage: { url: string, caption: string };
 
   @Prop({ enum: ['draft', 'published', 'archived'], default: 'draft' })
@@ -41,8 +41,8 @@ export class Article {
   @Prop({ default: 0 })
   reads: number;
 
-  // Explicitly define the type for `seo`
-  @Prop({ type: Object })  // Explicitly defining as Object type
+
+  @Prop({ type: Object })
   seo: { title: string, description: string };
 }
 

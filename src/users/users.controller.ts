@@ -9,7 +9,7 @@ import { JwtAuthGuard } from 'src/auth/jwt-auth.guard';
 @Controller('api/users')
 export class UsersController {
   constructor(private readonly usersService: UsersService,
-    private readonly authService: AuthService // 👈 inject karo
+    private readonly authService: AuthService
   ) {}
 
   @Post('register')
@@ -29,7 +29,7 @@ export class UsersController {
     return this.usersService.getMe(req.user.id);
   }
 
-  @Get('alldata')
+  @Get()
   getAll() {
     return this.usersService.findAll();
   }

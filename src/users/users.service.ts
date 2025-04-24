@@ -25,7 +25,7 @@ async login(dto: LoginUserDto) {
     const match = await bcrypt.compare(dto.password, user.password);
     if (!match) throw new NotFoundException('Invalid credentials');
   
-    return user; // ✅ return to controller, token waha banega
+    return user;
   }
 
   async getMe(id: string) {

@@ -12,14 +12,13 @@ export class CategoriesService {
     @InjectModel(Article.name) private articleModel: Model<ArticleDocument> // Inject Article model for fetching articles by category
   ) {}
 
-  // Get all categories
+  
   async getAllCategories(): Promise<Category[]> {
     return this.categoryModel.find().exec();
   }
 
-  // Get articles by category slug
+  
   async getArticlesByCategory(slug: string): Promise<Article[]> {
-    // Fetch articles belonging to the category (assuming 'category' field in Article Schema)
     return this.articleModel.find({ category: slug }).exec();
   }
 }

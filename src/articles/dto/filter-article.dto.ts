@@ -7,9 +7,9 @@ export class FilterArticleDto {
 
   @IsInt()
   @IsOptional()
-  page?: number;  // Pagination ka page number
+  page?: number;
 
   @IsInt()
   @IsOptional()
-  limit?: number;  // Pagination mein kitni items per page chahiye
+  limit?: number;
 }
